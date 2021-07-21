@@ -1,0 +1,212 @@
+<html><head>
+<META NAME ="keywords" CONTENT="midi,mixer,midimixer,synthesizer,keyboard,configuration,tool,utility,studio"> 
+<META NAME="description" CONTENT="A utility application for MIDI studio configurations"> 
+</head>
+<body>
+<img src="mmonly.jpg">
+<table width=90% border=0><tr><td>
+<h1>Midimix</h1>
+Midimix is an application that adds extra functionality when I am arranging music using
+my music sequencing software (Dr. T's KCS Omega) running in a Steem v1.62 Atari ST Emulation window on a PC 
+running Microsoft Windows.  
+
+<p>
+Before deciding to take on the task of writing this application, I scoured the internet to find a comparable utility 
+that I could use instead, but did not find anything suitable.  So while putting in the effort of making this useful to me,
+I realized there probably is an unfulfilled need for this type of application by other musicians who sequence music on their
+PC, so I spent some time cleaning up the application so that it can be downloaded and used by other computer musicians as well.
+<p>
+Ultimately midimix can be used in conjunction with any other sequencing program that does not provide the functionality 
+that midimix does.  In addition there are many extra features that enable midimix to be used as a stand alone application.
+<p>
+This is what midimix looks like while running it in conjunction with Dr. T's Omega running 
+inside the <a href="http://steem.atari.org">Steem Atari ST Emulator</a>. <small><i>Click image for 
+full size</i></small>
+<p>
+<a href="mmall.jpg"><img src="mmallsmall.jpg"  border=0></a>
+
+<hr>
+<h2>Download...</h2>
+click <a href="midimix.zip">here</a> to download the full installation program (recommended). sorry its such a big download! <br>
+OR... download the <a href="midimix.exe">executable</a>, and config files <a href="midimix.ini">midimix.ini</a> and <a href="mmdata.ini">mmdata.ini</a><p>
+
+
+<p>
+
+<hr>
+<h2>Documentation...</h2>
+<h3>patch selection tool page (click image to view full size)</h3>
+<a href="patchfull.jpg" ><img src="patchsmall.jpg" border=0></a>
+midimix can be used to organize and audition, keyboard patches.  Patches are organized in banks of 128, which can 
+be auditioned by clicking on the patch grid with the mouse.  Banks can be assigned as a <b>standard</b> bank of 128 patches
+using a MSB (controller #0) value, LSB (controller #32) value, and incremental PG (program change) number, or as a <b>favorites</b> bank
+where each of the displayed 128 patches has a unique MSB, LSB, and PG value.  
+
+<h3>MIDI mixing (controller editing) tool</h3>
+Midimix can be used to mix a song by using the mouse to adjust any available continuous controller setting supported by the
+midi instrument (such as volume, pan, reverb, chorus etc)
+
+<h3>Song section scratchpad</h3>
+Midimix can be used to chart out a song by displaying sections such as verse, chorus, bridge, turnaround, etc.  
+By clicking on a song section midimix is able to jump to the appropriate measure in the song loaded in the sequencer 
+application.
+
+<h3>Midi to keyboard mapper</h3>
+Midimix can be programmed to send a keyboard command to the active application in response to reception of any midi event.
+Practical uses include pushing a button on your keyboard (or depressing the keyboard's hold pedal) to start 
+recording on the sequencer, suspend (pause) the sequencer, or abort the current take.
+
+<h3>Load/Save Ability</h3>
+Song settings consisting of patch selection info (Program Change events), and mix settings (all controller settings such as
+volume, pan, reverb, chorus, etc) can be saved into a songsettings (.mix) file, so after tweaking the settings, they can be
+saved and later reloaded and sent to the midi sound modules.
+
+<h3>configurable control panels</h3>
+Midimix is configurable, allowing the user to configure only the desired controls to be visible.  The available controls are:
+<h4>patch name display box</h4>
+This is the box that visually displays the name of the patch for the currently selected midi channel.  The user can 
+click in this box to set the current midi transmitting channel, and audition the currently selected patch 
+by clicking the mouse inside the box, and can jump to the patch selection page
+to audition and change the selected patch.
+
+<h4>parameter edit box</h4>
+This is a compact substitute for a knob.  Rather than using a graphic knob to modify a parameter (such as volume/pan), 
+a small box that displays a number is much more compact and readily displays the controllers's value, which varies
+between 0-127.  And rather than display a bunch of knobs, a right click on the box selects the controller that it will
+control.  So for example, you can click on the box and move the mouse to change the volume level, then right click to
+select pan, and click and move the mouse to change the pan.  Any midi controller can be assigned, and the configuration 
+file stores the controller types and names. (e.g. configure it to allow the user to click on "volume" and have it adjust 
+controller #7)
+
+<h4>solo/mute</h4>
+Clicking on it will mute/unmute that midi channel. Right click for a menu to solo the channel.
+
+<h4>level meter</h4>
+A polyphony meter indicating midi activity per channel.
+
+<h4>Animated channel activity indicators</h4>
+An animated shape dances in response to note activity on that channel.
+
+<h3>keyboard display</h3>
+This displays a picture of a piano keyboard, allowing user to click on any key to sound a note,
+and when a sequence is playing the user can see which keys are being played.  Midi channels are able
+to be associated with user configurable colors.
+Looks very cool when watching an intricate performance displayed visually, like a virtual player piano.
+
+<h4>midi file player</h4>
+Play standard midi files through this included sequence player.
+
+<h4>midi monitor</h4>
+Displays each recieved midi message as they are recieved at the input port.
+
+When the patch audition window appears, the program change sent for a <h3>Configurable</h3>
+Common settings are automatically saved when ending each session, and the more extensive
+customization settings are configured by directly <a href="mm.htm#ini">editing the configuration file</a>. 
+
+<hr>
+<h2> Technical notes</h2>
+
+
+
+<a name=ini>
+The initialization file must be manually edited to add many of the user customizable features. An example
+Ini file is included which inclues example fields which can be modified.
+<p>[patchbanks] section
+ <p>
+here is where you need to enter the information for the banks of sounds on your synthesizer modules.
+<hr>
+A standard bank is numbered sequentially, from 0 to 127, using the same MSB (cc #0) and LSB (cc #32)
+<br>the format is <i>bank=bankname, filename, MSB value, LSB value</i>
+<br> where MSB value and LSB value are the values of controller #0 and #32 respectively, which will
+be sent to the sound module in addition to the program change (PG) to select the sound bank.
+<BLOCKQUOTE> 
+<b>bank=General Midi,gm.dat,81,3 </b>
+</BLOCKQUOTE> 
+Each line in the bank file that is referenced (e.g. gm.dat) must have the <i>patch name</i> associated
+with the corresponding PG that corresponds to the line number in the file.
+
+<hr>
+
+A <b>favorites </b> bank stores up to 128 patches with individually assigned PG, MSB, and LSB for each patch.
+<p>the format is <i>bank=bankname, filename</i>
+<BLOCKQUOTE> 
+<b>favorites=favorite.dat,Favorites 1 </b>
+</BLOCKQUOTE> 
+<TABLE BORDER CELLSPACING="0" CELLPADDING="9" WIDTH="65%" BORDERCOLOR=black ><tr><td>
+The format of each line in the bank file that is referenced (e.b. favorites.dat) is:
+<blockquote>
+MSB,LSB,PG, patchname</blockquote>
+for example  
+<blockquote>
+80,0,20,Slow Strings
+80,0,1,My Piano
+</blockquote>
+</table>
+<hr>
+
+<h3> the [maps] section</h3>
+remap key: used to translate a midi event into a keystroke 
+<p>
+<blockquote>
+format remap=statusbyte, databyte #1, databyte #2, incoming keycode, outgoing keypress
+<blockquote>
+For example: if you want to use your sustain pedal as a "punch in pedal" when recording, you may want 
+the pedal to cause the "R" keystroke to start recording when it is depressed... so the following would 
+accomplish that:
+<blockquote>
+remap=B0,40,7F,,'R'
+remap=B0,40,0,,''
+</blockquote>
+The first line sets a trigger that will simulate pressing the letter 'R' when recieving a midi event
+of B0,40,7F (status byte, 1st data byte, 2nd data byte) where 
+<br>B0 = controller change
+<br>40 = controller value in hex (40 is hex for #64, which is the sustain pedal
+<br>7F = the data value of that controller (7F is hex for 127, which is the value sent when a pedal is depressed)
+The second line sets up a trigger that sends nothing (since the last value has nothing between the quotes)
+when the same type of midi message is recieved with a 0 value (when a sustain pedal is released, the 2nd data byte, 
+which is the value of the controller, is 0)
+<p>
+the incoming keycode argument is optional, representing if you want redirect a keystroke to the sequencer
+
+<h3> more settings in the [maps] section</h3> (a bit obscure, may not be of interest...)
+app = the application that keystrokes will go to when passed through (if no app is defined, then keystrokes won't be passed through.
+<blockquote>
+app=Steem Engine
+</blockquote>
+switch key is the keystroke that will pass control to the "app"
+<blockquote>
+switch_key=20
+</blockquote>
+goto_key is the keystroke used to tell the sequencer to go to a particular measure
+<blockquote>
+goto_key=^g
+</blockquote>
+followup_key is the keystroke sent after going to the measure, for example to start playback
+<blockquote>
+followup_key= 
+</blockquote>
+<p>
+doubleclick_time is the amount of ms the program waits before sending a note from the patch selection window
+<blockquote>
+doubleclick_time=500
+</blockquote>
+
+<p> 
+<h2>[controllers] section</h2>
+Each controller needs to be included here in the format <b><i>cc=number,name</i></b>, for example,
+<blockquote>
+cc=7,volume
+</blockquote>
+These controllers will appear in the controllers menu by name (also when right-clicking the parameter box).  
+Any controllers appearing after the [invisible] header will NOT appear in the menu, although they will still
+store, send and recieve controller settings.  
+
+
+
+<center><img src=/cgi-bin/Count.cgi></center>
+
+</td></tr></table></body></html>
+
+
+
+
