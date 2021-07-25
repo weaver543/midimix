@@ -1,0 +1,24 @@
+# BANKNAME      cc0 cc32
+# JV User Group  80 0
+# JV Presets A   81 0
+# JV Presets B   81 1
+# JV Presets C   81 2
+# JV Presets D   81 3
+# JV Presets E   81 4
+# JV Expansion   84 0
+#
+81,0,0,64voice Piano
+80,0,15,orig Mellow
+81,2,111,Cascade (mellow)
+80,0,20,Slow Strings
+80,0,64,JP-8 Str 3
+81,0,109,Steel Away
+81,3,120,Fret Noise
+81,2,35,Warm Strings
+81,3,95,Sweep Pad
+81,4,112,Saw Pad
+80,0,58,Reso Pad
+80,4,116,Rivers
+80,0,16,Organ
+-1,-1,33,T3 Piano
+-1,-1,1,D110 Horn

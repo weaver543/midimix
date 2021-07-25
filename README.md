@@ -1,4 +1,3 @@
-![](mmonly.jpg)
 
 <table width="90%" border="0">
 <tbody>
@@ -9,6 +8,8 @@
 
 # Midimix
 
+![](images/mmonly.jpg)
+
 Midimix is an application that adds extra functionality when I am arranging music using my music sequencing software (Dr. T's KCS Omega) running in a Steem v1.62 Atari ST Emulation window on a PC running Microsoft Windows.
 
 Before deciding to take on the task of writing this application, I scoured the internet to find a comparable utility that I could use instead, but did not find anything suitable. So while putting in the effort of making this useful to me, I realized there probably is an unfulfilled need for this type of application by other musicians who sequence music on their PC, so I spent some time cleaning up the application so that it can be downloaded and used by other computer musicians as well.
@@ -17,7 +18,7 @@ Ultimately midimix can be used in conjunction with any other sequencing program 
 
 This is what midimix looks like while running it in conjunction with Dr. T's Omega running inside the [Steem Atari ST Emulator](http://steem.atari.org). <small>_Click image for full size_</small>
 
-[![](mmallsmall.jpg)](mmall.jpg)
+[![](images/mmallsmall.jpg)](images/mmall.jpg)
 
 * * *
 
@@ -32,7 +33,7 @@ OR... download the [executable](midimix.exe), and config files [midimix.ini](mid
 
 ### patch selection tool page (click image to view full size)
 
-[![](patchsmall.jpg)](patchfull.jpg) midimix can be used to organize and audition, keyboard patches. Patches are organized in banks of 128, which can be auditioned by clicking on the patch grid with the mouse. Banks can be assigned as a **standard** bank of 128 patches using a MSB (controller #0) value, LSB (controller #32) value, and incremental PG (program change) number, or as a **favorites** bank where each of the displayed 128 patches has a unique MSB, LSB, and PG value.
+[![](images/patchsmall.jpg)](images/patchfull.jpg) midimix can be used to organize and audition, keyboard patches. Patches are organized in banks of 128, which can be auditioned by clicking on the patch grid with the mouse. Banks can be assigned as a **standard** bank of 128 patches using a MSB (controller #0) value, LSB (controller #32) value, and incremental PG (program change) number, or as a **favorites** bank where each of the displayed 128 patches has a unique MSB, LSB, and PG value.
 
 ### MIDI mixing (controller editing) tool
 
@@ -94,7 +95,7 @@ Common settings are automatically saved when ending each session, and the more e
 
 ## Technical notes
 
-<a name="ini">The initialization file must be manually edited to add many of the user customizable features. An example Ini file is included which inclues example fields which can be modified.
+The initialization file must be manually edited to add many of the user customizable features. An example Ini file is included which inclues example fields which can be modified.
 
 [patchbanks] section
 
@@ -189,7 +190,7 @@ remap key: used to translate a midi event into a keystroke
 > > 
 > > These controllers will appear in the controllers menu by name (also when right-clicking the parameter box). Any controllers appearing after the [invisible] header will NOT appear in the menu, although they will still store, send and recieve controller settings.
 > > 
-> > <center>![](/cgi-bin/Count.cgi)</center>
+> > 
 
 </a></td>
 

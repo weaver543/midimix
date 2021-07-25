@@ -1,0 +1,8 @@
+[channel 4]
+patch=81,4,112,Saw Pad
+enabled=1
+
+[channel 5]
+cc=7,55
+
+
